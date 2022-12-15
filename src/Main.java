@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Day15.start(new Scanner("Sensor at x=2, y=18: closest beacon is at x=-2, y=15\n" +
+        Day15.start2(new Scanner("Sensor at x=2, y=18: closest beacon is at x=-2, y=15\n" +
                 "Sensor at x=9, y=16: closest beacon is at x=10, y=16\n" +
                 "Sensor at x=13, y=2: closest beacon is at x=15, y=3\n" +
                 "Sensor at x=12, y=14: closest beacon is at x=10, y=16\n" +
@@ -18,8 +18,8 @@ public class Main {
                 "Sensor at x=17, y=20: closest beacon is at x=21, y=22\n" +
                 "Sensor at x=16, y=7: closest beacon is at x=15, y=3\n" +
                 "Sensor at x=14, y=3: closest beacon is at x=15, y=3\n" +
-                "Sensor at x=20, y=1: closest beacon is at x=15, y=3"), 10);
-        Day15.start(new Scanner("Sensor at x=2302110, y=2237242: closest beacon is at x=2348729, y=1239977\n" +
+                "Sensor at x=20, y=1: closest beacon is at x=15, y=3"), 20);
+        Day15.start2(new Scanner("Sensor at x=2302110, y=2237242: closest beacon is at x=2348729, y=1239977\n" +
                 "Sensor at x=47903, y=2473047: closest beacon is at x=-432198, y=2000000\n" +
                 "Sensor at x=2363579, y=1547888: closest beacon is at x=2348729, y=1239977\n" +
                 "Sensor at x=3619841, y=520506: closest beacon is at x=2348729, y=1239977\n" +
@@ -51,7 +51,7 @@ public class Main {
                 "Sensor at x=2270816, y=3197807: closest beacon is at x=2017966, y=3158243\n" +
                 "Sensor at x=3999999, y=2810929: closest beacon is at x=3998497, y=2812428\n" +
                 "Sensor at x=3978805, y=3296024: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=1054910, y=811769: closest beacon is at x=2348729, y=1239977"), 2000000);
+                "Sensor at x=1054910, y=811769: closest beacon is at x=2348729, y=1239977"), 4000000);
     }
 
 }
