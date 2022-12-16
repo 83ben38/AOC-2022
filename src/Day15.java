@@ -157,6 +157,7 @@ public class Day15 {
                 }
             }
         }
+
     }
     public static class scanner{
         long x;

@@ -5,53 +5,62 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Day15.start2(new Scanner("Sensor at x=2, y=18: closest beacon is at x=-2, y=15\n" +
-                "Sensor at x=9, y=16: closest beacon is at x=10, y=16\n" +
-                "Sensor at x=13, y=2: closest beacon is at x=15, y=3\n" +
-                "Sensor at x=12, y=14: closest beacon is at x=10, y=16\n" +
-                "Sensor at x=10, y=20: closest beacon is at x=10, y=16\n" +
-                "Sensor at x=14, y=17: closest beacon is at x=10, y=16\n" +
-                "Sensor at x=8, y=7: closest beacon is at x=2, y=10\n" +
-                "Sensor at x=2, y=0: closest beacon is at x=2, y=10\n" +
-                "Sensor at x=0, y=11: closest beacon is at x=2, y=10\n" +
-                "Sensor at x=20, y=14: closest beacon is at x=25, y=17\n" +
-                "Sensor at x=17, y=20: closest beacon is at x=21, y=22\n" +
-                "Sensor at x=16, y=7: closest beacon is at x=15, y=3\n" +
-                "Sensor at x=14, y=3: closest beacon is at x=15, y=3\n" +
-                "Sensor at x=20, y=1: closest beacon is at x=15, y=3"), 20);
-        Day15.start2(new Scanner("Sensor at x=2302110, y=2237242: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=47903, y=2473047: closest beacon is at x=-432198, y=2000000\n" +
-                "Sensor at x=2363579, y=1547888: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=3619841, y=520506: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=3941908, y=3526118: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=3206, y=1564595: closest beacon is at x=-432198, y=2000000\n" +
-                "Sensor at x=3123411, y=3392077: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=3279053, y=3984688: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=2968162, y=3938490: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=1772120, y=2862246: closest beacon is at x=2017966, y=3158243\n" +
-                "Sensor at x=3283241, y=2619168: closest beacon is at x=3172577, y=2521434\n" +
-                "Sensor at x=2471642, y=3890150: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=3163348, y=3743489: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=2933313, y=2919047: closest beacon is at x=3172577, y=2521434\n" +
-                "Sensor at x=2780640, y=3629927: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=3986978, y=2079918: closest beacon is at x=3998497, y=2812428\n" +
-                "Sensor at x=315464, y=370694: closest beacon is at x=-550536, y=260566\n" +
-                "Sensor at x=3957316, y=3968366: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=2118533, y=1074658: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=3494855, y=3378533: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=2575727, y=210553: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=3999990, y=2813525: closest beacon is at x=3998497, y=2812428\n" +
-                "Sensor at x=3658837, y=3026912: closest beacon is at x=3998497, y=2812428\n" +
-                "Sensor at x=1551619, y=1701155: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=2625855, y=3330422: closest beacon is at x=2977835, y=3592946\n" +
-                "Sensor at x=3476946, y=2445098: closest beacon is at x=3172577, y=2521434\n" +
-                "Sensor at x=2915568, y=1714113: closest beacon is at x=2348729, y=1239977\n" +
-                "Sensor at x=729668, y=3723377: closest beacon is at x=-997494, y=3617758\n" +
-                "Sensor at x=3631681, y=3801747: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=2270816, y=3197807: closest beacon is at x=2017966, y=3158243\n" +
-                "Sensor at x=3999999, y=2810929: closest beacon is at x=3998497, y=2812428\n" +
-                "Sensor at x=3978805, y=3296024: closest beacon is at x=3772294, y=3485243\n" +
-                "Sensor at x=1054910, y=811769: closest beacon is at x=2348729, y=1239977"), 4000000);
+        Day16.start(new Scanner("Valve AA has flow rate=0; tunnels lead to valves DD, II, BB\n" +
+                "Valve BB has flow rate=13; tunnels lead to valves CC, AA\n" +
+                "Valve CC has flow rate=2; tunnels lead to valves DD, BB\n" +
+                "Valve DD has flow rate=20; tunnels lead to valves CC, AA, EE\n" +
+                "Valve EE has flow rate=3; tunnels lead to valves FF, DD\n" +
+                "Valve FF has flow rate=0; tunnels lead to valves EE, GG\n" +
+                "Valve GG has flow rate=0; tunnels lead to valves FF, HH\n" +
+                "Valve HH has flow rate=22; tunnel leads to valve GG\n" +
+                "Valve II has flow rate=0; tunnels lead to valves AA, JJ\n" +
+                "Valve JJ has flow rate=21; tunnel leads to valve II\n"));
+        Day16.start(new Scanner("Valve OJ has flow rate=0; tunnels lead to valves EW, IG\n" +
+                "Valve BN has flow rate=0; tunnels lead to valves SA, AA\n" +
+                "Valve SA has flow rate=5; tunnels lead to valves QK, LP, ZP, BN, VH\n" +
+                "Valve RL has flow rate=21; tunnel leads to valve AM\n" +
+                "Valve LR has flow rate=19; tunnel leads to valve XZ\n" +
+                "Valve VQ has flow rate=0; tunnels lead to valves OW, IG\n" +
+                "Valve ZK has flow rate=0; tunnels lead to valves EW, WC\n" +
+                "Valve IG has flow rate=16; tunnels lead to valves OJ, VQ\n" +
+                "Valve WC has flow rate=22; tunnels lead to valves VD, ZK\n" +
+                "Valve EW has flow rate=18; tunnels lead to valves OJ, ZK\n" +
+                "Valve FP has flow rate=8; tunnel leads to valve GB\n" +
+                "Valve JF has flow rate=23; tunnel leads to valve VD\n" +
+                "Valve BL has flow rate=0; tunnels lead to valves AA, ZD\n" +
+                "Valve BZ has flow rate=0; tunnels lead to valves QK, JA\n" +
+                "Valve KH has flow rate=0; tunnels lead to valves SJ, FC\n" +
+                "Valve FU has flow rate=0; tunnels lead to valves FC, MH\n" +
+                "Valve ZP has flow rate=0; tunnels lead to valves SA, FC\n" +
+                "Valve DZ has flow rate=0; tunnels lead to valves AA, MH\n" +
+                "Valve RI has flow rate=0; tunnels lead to valves LP, MH\n" +
+                "Valve AE has flow rate=0; tunnels lead to valves FC, AA\n" +
+                "Valve JA has flow rate=4; tunnels lead to valves MM, BZ, JR, ZI, QO\n" +
+                "Valve XP has flow rate=0; tunnels lead to valves ZD, ZI\n" +
+                "Valve GB has flow rate=0; tunnels lead to valves FP, SJ\n" +
+                "Valve AM has flow rate=0; tunnels lead to valves ZD, RL\n" +
+                "Valve MH has flow rate=3; tunnels lead to valves VJ, DZ, JR, FU, RI\n" +
+                "Valve QK has flow rate=0; tunnels lead to valves BZ, SA\n" +
+                "Valve AA has flow rate=0; tunnels lead to valves DZ, CZ, BL, AE, BN\n" +
+                "Valve MJ has flow rate=0; tunnels lead to valves VN, VH\n" +
+                "Valve QO has flow rate=0; tunnels lead to valves CZ, JA\n" +
+                "Valve MM has flow rate=0; tunnels lead to valves FC, JA\n" +
+                "Valve VN has flow rate=17; tunnels lead to valves FV, MJ\n" +
+                "Valve OW has flow rate=0; tunnels lead to valves SJ, VQ\n" +
+                "Valve ZI has flow rate=0; tunnels lead to valves XP, JA\n" +
+                "Valve VJ has flow rate=0; tunnels lead to valves KJ, MH\n" +
+                "Valve KQ has flow rate=0; tunnels lead to valves XZ, KJ\n" +
+                "Valve FC has flow rate=12; tunnels lead to valves ZP, MM, KH, AE, FU\n" +
+                "Valve LP has flow rate=0; tunnels lead to valves SA, RI\n" +
+                "Valve VD has flow rate=0; tunnels lead to valves WC, JF\n" +
+                "Valve JR has flow rate=0; tunnels lead to valves MH, JA\n" +
+                "Valve VH has flow rate=0; tunnels lead to valves SA, MJ\n" +
+                "Valve CZ has flow rate=0; tunnels lead to valves AA, QO\n" +
+                "Valve SJ has flow rate=15; tunnels lead to valves KH, FV, GB, OW\n" +
+                "Valve FV has flow rate=0; tunnels lead to valves VN, SJ\n" +
+                "Valve XZ has flow rate=0; tunnels lead to valves LR, KQ\n" +
+                "Valve KJ has flow rate=9; tunnels lead to valves KQ, VJ\n" +
+                "Valve ZD has flow rate=13; tunnels lead to valves XP, BL, AM"));
     }
 
 }
