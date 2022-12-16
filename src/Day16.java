@@ -40,6 +40,15 @@ public class Day16 {
                 time = 31;
             }
         }
+        for (valve r: map.values()) {
+            for (valve d : map.values()) {
+                d.distance = 999;
+            }
+            r.distance(-1);
+            for (valve d: map.values()) {
+                d.distances.put(r.name,d.distance);
+            }
+        }
         ArrayList<valve> possible = new ArrayList<>();
         for (valve v: map.values()) {
             if (v.flowRate > 0){
@@ -47,38 +56,72 @@ public class Day16 {
                 v.open = false;
             }
         }
-        System.out.println(getBestTime(0,possible,map.get("AA")));
-        System.out.println(total);
+        System.out.println(getBestTime(0,0,possible,map.get("AA"), map.get("AA")));
     }
 
-    public static int getBestTime(int time, ArrayList<valve> possible, valve prev){
-        if (time > 26){
+    public static int getBestTime(int time, int time2, ArrayList<valve> possible, valve prev, valve prev2){
+        if (time > 26 && time2 > 26){
             return 0;
         }
-        int best = 0;
-        for (valve v : possible) {
-            if (!v.open) {
-                v.open = true;
-                for (valve d: map.values()) {
-                    d.distance = 999;
+        if (time2 > 26) {
+            int best = 0;
+            for (valve v : possible) {
+                if (!v.open) {
+                    v.open = true;
+                    int futureTime = (v.distances.get(prev.name) + time + 1);
+                    int d = ((26 - futureTime) * v.flowRate) + getBestTime(futureTime, time2, possible, v, prev2);
+                    if (d > best) {
+                        best = d;
+                    }
+                    v.open = false;
                 }
-                prev.distance(-1);
-                int futureTime = (v.distance+time + 1);
-                int d = ((26-futureTime)*v.flowRate) + getBestTime(futureTime, possible, v);
-                if (d > best){
-                    best = d;
-                }
-                v.open = false;
             }
+            return best;
         }
-        return best;
+        else if (time > 26) {
+            int best = 0;
+            for (valve v : possible) {
+                if (!v.open) {
+                    v.open = true;
+                    int futureTime = (v.distances.get(prev2.name) + time2 + 1);
+                    int d = ((26 - futureTime) * v.flowRate) + getBestTime(time, futureTime, possible, prev, v);
+                    if (d > best) {
+                        best = d;
+                    }
+                    v.open = false;
+                }
+            }
+            return best;
+        }
+        else{
+            int best = 0;
+            for (valve v: possible) {
+                if (!v.open) {
+                    v.open = true;
+                    for (valve d : possible) {
+                        if (!d.open){
+                            d.open = true;
+                            int futureTime1 = (v.distances.get(prev.name) + time + 1);
+                            int futureTime2 = (d.distances.get(prev2.name) + time2 + 1);
+                            int p = ((26 - futureTime1) * v.flowRate) + ((26 - futureTime2) * d.flowRate) + getBestTime(futureTime1,futureTime2,possible,v,d);
+                            if (p > best){
+                                best = p;
+                            }
+                            d.open = false;
+                        }
+                    }
+                    v.open = false;
+                }
+            }
+            return best;
+        }
     }
     public static class valve{
         String name;
         int flowRate;
         boolean open = false;
-        boolean checking = false;
         int distance;
+        HashMap<String, Integer> distances = new HashMap<>();
         ArrayList<String> tunnels = new ArrayList<>();
         public valve(int rate, String word){
             name = word;
