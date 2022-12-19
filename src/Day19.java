@@ -25,9 +25,10 @@ public class Day19 {
             s.next();
             blueprints.add(current);
         }
-        int total = 0;
+        int total = 1;
         for (int i = 0; i < blueprints.size(); i++) {
-            total += blueprints.get(i).getNumber();
+            total *= blueprints.get(i).getNumber();
+            total /= blueprints.get(i).blueprintNumber;
             //System.out.println(blueprints.get(i).getNumber());
         }
         System.out.println(total);
@@ -48,7 +49,7 @@ public class Day19 {
             return getBest(1,0,0,0,1,0,0,0)*blueprintNumber;
         }
         public int getBest(int minute, int ore, int clay, int obsidian, int oreBot, int clayBot, int obsBot, int geoBot){
-            if (minute == 24){
+            if (minute == 32){
                 return geoBot;
             }
             int best = 0;
@@ -101,6 +102,7 @@ public class Day19 {
                     best = best2;
                 }
             }
+
             int best2 = getBest(minute + 1, ore + oreBot, clay + clayBot, obsidian + obsBot, oreBot, clayBot, obsBot, geoBot);
             if (best2 > best){
                 best = best2;
