@@ -101,5 +101,13 @@ public class Day20 {
                 return next.get(z-1);
             }
         }
+        /*native
+        non-sealed
+        sealed
+        synchronized
+        strictfp
+        transient
+        volatile*/
+
     }
 }
