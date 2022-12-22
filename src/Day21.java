@@ -5,7 +5,6 @@ public class Day21 {
     static HashMap<String, monkey> map = new HashMap<>();
     public static void start(Scanner s){
         monkey root = null;
-        monkey humn = null;
         while (s.hasNextLine()){
             String n = s.next().substring(0,4);
             map.put(n,new monkey());
@@ -13,7 +12,6 @@ public class Day21 {
                 root = map.get(n);
             }
             if (n.equals("humn")){
-               humn = map.get(n);
                map.get(n).humn = true;
             }
             if (s.hasNextInt()){
